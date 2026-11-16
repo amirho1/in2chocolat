@@ -9,7 +9,7 @@ export function Hero() {
   return <section aria-labelledby="hero-heading" className="site-container pt-5 md:pt-7">
     <div className="hero-enter relative overflow-hidden rounded-2xl bg-secondary">
       <div className="grid items-center gap-y-8 md:min-h-[410px] md:grid-cols-[1.08fr_1fr] md:gap-y-0">
-        <div className="relative z-10 flex flex-col items-start gap-6 px-6 pt-9 md:px-12 md:py-12 lg:px-16">
+        <div className="relative z-10 flex flex-col items-center gap-6 px-6 pt-9 text-center md:items-start md:px-12 md:py-12 md:text-start lg:px-16">
           <p className="flex items-center gap-2 text-xs font-medium text-primary md:text-sm"><span className="h-px w-7 bg-primary" />برای لحظه‌های خوش‌طعم شما</p>
           <h1 id="hero-heading" className="text-[32px] font-extrabold leading-[1.65] tracking-tight sm:text-4xl lg:text-[46px]">حال خوب،<br /><span className="text-primary">طعم شیرین</span> زندگی.</h1>
           <p className="max-w-md text-sm leading-7 text-muted-foreground md:text-base md:leading-8">دنیایی از شکلات، قهوه و خوراکی‌های خارجی؛<br className="hidden sm:block" /> انتخابی برای لحظه‌های کوچک و دوست‌داشتنی.</p>
