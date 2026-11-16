@@ -1,6 +1,15 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
+import localFont from 'next/font/local'
 import './globals.css'
+
+const iranYekan = localFont({
+  src: './fonts/IRANYekanXVF.woff2',
+  variable: '--font-iranyekan',
+  weight: '100 1000',
+  display: 'swap',
+  fallback: ['Tahoma', 'sans-serif'],
+})
 
 export const metadata: Metadata = {
   title: 'ایندو بازار | لباس زیر زنانه، لانژری و لباس خواب',
@@ -37,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="fa" dir="rtl" className="light" data-brand="bazar">
+    <html lang="fa" dir="rtl" className={`light ${iranYekan.variable}`} data-brand="bazar">
       <body className="antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && process.env.VERCEL === '1' && <Analytics />}
