@@ -100,6 +100,25 @@
 .mobile-nav-item:hover .nav-icon { background: var(--secondary); color: var(--primary); }
 .mobile-nav-item[data-active='true']:hover .nav-icon { background: var(--primary); color: var(--primary-foreground); }
 
+
+/* Floating support demo stays above the mobile navigation and safe area. */
+.support-widget { position: fixed; left: 1rem; bottom: calc(6.75rem + env(safe-area-inset-bottom)); z-index: 40; direction: rtl; }
+.support-trigger { position: relative; display: flex; width: 60px; height: 60px; align-items: center; justify-content: center; border: 0; border-radius: 50%; background: var(--primary); color: var(--primary-foreground); box-shadow: 0 8px 26px color-mix(in srgb, var(--primary) 24%, transparent); transition: transform 240ms ease, box-shadow 240ms ease; animation: support-reveal 420ms ease-out; }
+.support-trigger:hover { transform: translateY(-3px); box-shadow: 0 12px 32px color-mix(in srgb, var(--primary) 32%, transparent); }
+.support-trigger:active { transform: scale(.96); }
+.support-icon { position: absolute; display: flex; transition: opacity 220ms ease, transform 300ms ease; }
+.support-icon svg { width: 29px; height: 29px; stroke-width: 1.8; }
+.support-close-icon { opacity: 0; transform: rotate(-70deg) scale(.6); }
+.support-widget[data-open='true'] .support-chat-icon { opacity: 0; transform: rotate(70deg) scale(.6); }
+.support-widget[data-open='true'] .support-close-icon { opacity: 1; transform: rotate(0) scale(1); }
+.support-tooltip { position: absolute; left: calc(100% + 12px); top: 50%; width: max-content; max-width: calc(100vw - 108px); padding: 10px 14px; border: 1px solid var(--border); border-radius: 12px; background: var(--card); color: var(--foreground); box-shadow: 0 4px 18px rgb(0 0 0 / 6%); font-size: 12px; line-height: 1.8; pointer-events: none; opacity: 0; visibility: hidden; transform: translate(-8px, -50%); transition: opacity 200ms ease, transform 240ms ease, visibility 200ms; }
+.support-widget[data-open='false']:focus-within .support-tooltip { opacity: 1; visibility: visible; transform: translate(0, -50%); }
+@media (hover: hover) { .support-widget[data-open='false']:has(.support-trigger:hover) .support-tooltip { opacity: 1; visibility: visible; transform: translate(0, -50%); } }
+.support-panel { position: absolute; left: 0; bottom: calc(100% + 16px); width: min(320px, calc(100vw - 32px)); max-height: calc(100dvh - 210px - env(safe-area-inset-bottom)); overflow-y: auto; border: 1px solid var(--border); border-radius: 20px; background: var(--card); color: var(--foreground); box-shadow: 0 14px 48px rgb(0 0 0 / 12%); opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(12px) scale(.96); transform-origin: bottom left; transition: opacity 220ms ease, transform 280ms cubic-bezier(.22,.8,.25,1), visibility 220ms; }
+.support-widget[data-open='true'] .support-panel { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0) scale(1); }
+@keyframes support-reveal { from { opacity: 0; transform: translateY(12px) scale(.85); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@media (min-width: 1024px) { .support-widget { left: 24px; bottom: 24px; } .support-trigger { width: 64px; height: 64px; } .support-panel { max-height: calc(100dvh - 128px); } }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; animation-iteration-count: 1 !important; }

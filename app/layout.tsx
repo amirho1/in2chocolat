@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
+import { SupportWidget } from '@/components/store/support-widget'
 import './globals.css'
 
 const iranYekan = localFont({
@@ -33,6 +34,7 @@ export default function RootLayout({
     <html lang="fa" dir="rtl" className={`light ${iranYekan.variable}`} data-brand="chocolate">
       <body className="antialiased">
         {children}
+        <SupportWidget />
         {process.env.NODE_ENV === 'production' && process.env.VERCEL === '1' && <Analytics />}
       </body>
     </html>
