@@ -9,9 +9,9 @@ import { categories, categoryLink, storeLink } from '@/lib/store'
 import { cn } from '@/lib/utils'
 
 export function BrandLogo() {
-  return <a href="/" aria-label="ایندو بازار، صفحه اصلی" className="flex shrink-0 items-center gap-2">
-    <Image src="/images/in2bazzr-150x150.webp" width={54} height={54} alt="" className="size-12 object-contain md:size-14" priority />
-    <span className="text-xl font-extrabold tracking-tight"><span className="text-primary">ایندو</span> بازار</span>
+  return <a href="/" aria-label="ایندو چاکلت، صفحه اصلی" className="flex shrink-0 items-center gap-2">
+    <Image src="/images/chocolate/logo-150x150.webp" width={54} height={54} alt="" className="size-12 object-contain md:size-14" priority />
+    <span className="text-xl font-extrabold tracking-tight"><span className="text-primary">ایندو</span> چاکلت</span>
   </a>
 }
 
@@ -33,7 +33,7 @@ export function StoreHeader() {
   return <>
     <a className="fixed start-4 top-3 z-[100] -translate-y-24 rounded-lg bg-primary px-5 py-3 text-primary-foreground focus:translate-y-0" href="#main">رفتن به محتوای اصلی</a>
     <div className="bg-primary text-primary-foreground">
-      <a href={storeLink('/indo-shipping-methods/')} className="site-container flex min-h-9 items-center justify-center gap-2 py-1 text-center text-xs md:text-sm"><Truck className="size-4 shrink-0" aria-hidden="true" /><span>ارسال رایگان برای سفارش‌های بالای ۳ میلیون تومان</span><ArrowLeft className="hidden size-4 sm:block" aria-hidden="true" /></a>
+      <a href={storeLink('/in2chocolate-shipping/')} className="site-container flex min-h-9 items-center justify-center gap-2 py-1 text-center text-xs md:text-sm"><Truck className="size-4 shrink-0" aria-hidden="true" /><span>شکلات، قهوه و خوراکی‌های منتخب · ارسال به سراسر ایران</span><ArrowLeft className="hidden size-4 sm:block" aria-hidden="true" /></a>
     </div>
     {searchOpen && <button type="button" tabIndex={-1} aria-label="بستن جستجو" onClick={closeSearch} className="fixed inset-0 z-20 bg-black/10 backdrop-blur-sm lg:hidden" />}
     <header className="sticky top-0 z-30 border-b bg-background/95 backdrop-blur-lg">
@@ -54,7 +54,7 @@ export function StoreHeader() {
           </div>
         </div>
         <div className="col-start-3 row-start-1 hidden items-center gap-4 lg:flex">
-          <a href={storeLink('/login/')} className="hidden min-h-11 items-center gap-2 text-sm sm:flex"><UserRound className="size-5" /><span>ورود <span className="text-border">/</span> ثبت‌نام</span></a>
+          <a href={storeLink('/panel')} className="hidden min-h-11 items-center gap-2 text-sm sm:flex"><UserRound className="size-5" /><span>ورود <span className="text-border">/</span> ثبت‌نام</span></a>
           <span className="hidden h-6 w-px bg-border sm:block" />
           <a href={storeLink('/cart/')} className={buttonVariants({ variant: 'ghost', size: 'icon' })} aria-label="سبد خرید در فروشگاه اصلی"><ShoppingBag /></a>
         </div>
@@ -70,12 +70,12 @@ export function StoreHeader() {
           <a href={storeLink('/about-us/')} className="flex min-h-11 items-center hover:text-primary">درباره ما</a>
           <a href={storeLink('/contact-us/')} className="flex min-h-11 items-center hover:text-primary">تماس با ما</a>
         </div>
-        <span className="flex items-center gap-1.5 text-xs text-muted-foreground"><ShieldCheck className="size-4" />بسته‌بندی محرمانه</span>
+        <span className="flex items-center gap-1.5 text-xs text-muted-foreground"><ShieldCheck className="size-4" />انتخابی خوش‌طعم، خریدی مطمئن</span>
       </nav>
     </header>
     <Sheet open={menuOpen} onOpenChange={open => { setMenuOpen(open); setActiveIndex(open ? 1 : 2) }}>
       <SheetContent side="right" className="overflow-y-auto" dir="rtl">
-        <SheetHeader className="pt-16"><SheetTitle>دنیای ایندو بازار</SheetTitle><SheetDescription>از دسته‌بندی دلخواهتان شروع کنید.</SheetDescription></SheetHeader>
+        <SheetHeader className="pt-16"><SheetTitle>دنیای ایندو چاکلت</SheetTitle><SheetDescription>از دسته‌بندی دلخواهتان شروع کنید.</SheetDescription></SheetHeader>
         <nav aria-label="دسته‌بندی محصولات" className="flex flex-col gap-1 px-4 pb-8">
           <a className="flex min-h-12 items-center justify-between rounded-lg bg-secondary px-4 font-medium text-primary" href={storeLink('/shop/')}>همه محصولات<ArrowLeft className="size-4" /></a>
           {categories.map(category => <a key={category.slug} href={categoryLink(category.slug)} className="flex min-h-12 items-center justify-between rounded-lg px-4 text-base hover:bg-muted">{category.title}<ArrowLeft className="size-4 text-muted-foreground" /></a>)}

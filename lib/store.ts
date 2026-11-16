@@ -1,7 +1,6 @@
-export const STORE_URL = 'https://in2bazar.com'
+export const STORE_URL = 'https://in2chocolate.com'
 export const sourceDate = '2026-11-16'
 export const storeLink = (path: string) => `${STORE_URL}${path}`
-export const media = (path: string) => `/images/${path.split('/').pop()}`
 
 export type Category = { title: string; slug: string; image?: string; caption?: string }
 export type Product = {
@@ -15,43 +14,151 @@ export type Product = {
 }
 
 export const categories: Category[] = [
-  { title: 'لباس خواب', slug: 'women-homewear-set', image: media('uploads/2026/06/icon-homewear-f.webp'), caption: 'راحتی، به سبک شما' },
-  { title: 'بادی زنانه', slug: 'women-bodysuit', image: media('uploads/2026/06/icon-body-f.webp'), caption: 'جزئیاتِ دوست‌داشتنی' },
-  { title: 'کاستوم زنانه', slug: 'women-costume', image: media('uploads/2026/06/icon-costume-f.webp'), caption: 'انتخابی متفاوت' },
-  { title: 'سرهمی زنانه', slug: 'women-jumpsuit', image: media('uploads/2026/06/icon-jumpsuit-f.webp'), caption: 'خاص، درست مثل شما' },
-  { title: 'ست زنانه', slug: 'women-set' },
-  { title: 'پیراهن', slug: 'women-dresse' },
-  { title: 'تونیک', slug: 'women-tunic' },
-  { title: 'نیم‌تنه', slug: 'women-top' },
-  { title: 'شورت', slug: 'women-underwear-bottom' },
-  { title: 'جوراب', slug: 'women-socks' },
+  { title: 'شکلات', slug: 'chocolate', image: '/images/chocolate/icon-chocolate.webp', caption: 'یک تکه حال خوب' },
+  { title: 'صبحانه و کرم‌ها', slug: 'breakfast-spreads', image: '/images/chocolate/icon-breakfast.webp', caption: 'شروعی شیرین برای روز شما' },
+  { title: 'قهوه و نوشیدنی گرم', slug: 'coffee-hot-drinks', image: '/images/chocolate/icon-coffe.webp', caption: 'عطر یک لحظه آرامش' },
+  { title: 'نوشیدنی سرد', slug: 'cold-drinks', image: '/images/chocolate/icon-drink.webp', caption: 'تازه و خوش‌طعم' },
+  { title: 'بیسکویت و ویفر', slug: 'biscuits-wafers' },
+  { title: 'پاستیل و مارشمالو', slug: 'gummies-marshmallows' },
+  { title: 'شکلات دراژه‌ای', slug: 'chocolate-dragees' },
+  { title: 'شکلات تخته‌ای', slug: 'chocolate-tablets' },
+  { title: 'دانه قهوه', slug: 'coffee-bean' },
+  { title: 'قهوه فوری', slug: 'instant-coffee' },
 ]
-export const categoryLink = (slug: string) => storeLink(`/product-category/women/${slug}/`)
+export const categoryLink = (slug: string) => storeLink(`/product-category/${slug}/`)
 export const productLink = (id: string) => storeLink(`/product/${id}/`)
 
 export const bestsellers: Product[] = [
-  { id: 'roxyrose-1206', name: 'لباس خواب زنانه فانتزی حریر رنگی روکسی رز', brand: 'ROXY ROSE', price: 1974000, image: media('uploads/2026/05/roxyrose-1206-1-300x450.webp') },
-  { id: 'lovele-8070', name: 'لباس خواب زنانه پاپیونی پلنگی لاولی', brand: 'LOVELE', price: 1089000, image: media('uploads/2026/09/lovele-8070-1-300x450.webp') },
-  { id: 'mylove-234', name: 'جوراب شلواری زنانه زنبوری درشت مشکی مای لاو', brand: 'MY LOVE', price: 385000, image: media('uploads/2026/08/mylove-234-1-300x450.webp') },
+  {
+    "id": "bebeto-003",
+    "name": "پاستیل ببتو هندوانه 80 گرمی",
+    "brand": "BEBETO",
+    "price": 165000,
+    "image": "/images/chocolate/bebeto-003-1-300x300.webp"
+  },
+  {
+    "id": "albeni-002",
+    "name": "شکلات آلبنی اولکر بسته 18 عددی",
+    "brand": "ÜLKER",
+    "price": 2400000,
+    "image": "/images/chocolate/albeni-002-1-300x300.webp"
+  },
+  {
+    "id": "bebeto-011",
+    "name": "پاستیل ببتو طرح بستنی 80 گرمی",
+    "brand": "BEBETO",
+    "price": 165000,
+    "image": "/images/chocolate/bebeto-011-1-300x300.webp"
+  }
 ]
-export const jumpsuits: Product[] = [
-  { id: 'kenzo-1645', name: 'سرهمی زنانه دانتل کاپ فنردار مشکی کنزو', brand: 'KENZO', price: 1666000, image: media('uploads/elementor/thumbs/kenzo-1645-1-rw284el6v70tu9iospmllaoxckfoivwqc258gv7ge0.webp') },
-  { id: 'tifa-2021', name: 'سرهمی زنانه جوراب‌دار حریر و دانتل مشکی تیفا', brand: 'TIFA', price: 1678000, image: media('uploads/elementor/thumbs/tifa-2021-1-rtty4i29du8l2fa7re303wjxbpvkw5pcicj8du7iyg.webp') },
-  { id: 'lavina-y26', name: 'سرهمی زنانه بند پهن طرح‌دار مشکی لاوینا', brand: 'LAVINA', price: 618000, image: media('uploads/elementor/thumbs/lavina-y26-1-roxigj20xpz2uungecyq5y9kczry2ugp0kaz3gmnqw.webp') },
-  { id: 'krishna-1899', name: 'سرهمی زنانه گارتر‌دار زنجیری رنگی کریشنا', brand: 'KRISHNA', price: 1258000, image: media('uploads/elementor/thumbs/krishna-1899-1-rowi4kmuyzhbgmj3xzlll0cyp2ix93yv6s5okby5yw.webp') },
-  { id: 'harny-1249', name: 'سرهمی زنانه فنری قلبی رنگی هارنی', brand: 'HARNY', price: 1118000, image: media('uploads/elementor/thumbs/harny-1249-1-ro87wh4hs8jvn5iaw022cvtwhchkw5x86d1k97xwhk.webp') },
-  { id: 'tifa-2028', name: 'سرهمی زنانه مشکی تیفا', brand: 'TIFA', price: 1538000, image: media('uploads/elementor/thumbs/tifa-2028-1-rob3b6xd4so59y1yu5zmigwl0now56um03kqmw8ddk.webp') },
+
+export const chocolates: Product[] = [
+  {
+    "id": "mars-003",
+    "name": "شکلات مارس 50 گرمی بسته 36 عددی",
+    "brand": "MARS",
+    "price": 9165000,
+    "image": "/images/chocolate/mars-003-1-300x300.webp"
+  },
+  {
+    "id": "snickers-003",
+    "name": "شکلات اسنیکرز 50 گرمی بسته 48 عددی",
+    "brand": "SNICKERS",
+    "price": 12220000,
+    "image": "/images/chocolate/snickers-003-1-300x300.webp"
+  },
+  {
+    "id": "albeni-002",
+    "name": "شکلات آلبنی اولکر بسته 18 عددی",
+    "brand": "ÜLKER",
+    "price": 2400000,
+    "image": "/images/chocolate/albeni-002-1-300x300.webp"
+  },
+  {
+    "id": "metro-002",
+    "name": "شکلات مترو کلاسیک 50.4 گرمی بسته 18 عددی",
+    "brand": "ÜLKER",
+    "price": 2400000,
+    "image": "/images/chocolate/metro-002-1-300x300.webp"
+  },
+  {
+    "id": "kitkat-012",
+    "name": "کیت کت 4 انگشتی بسته 24 عددی",
+    "brand": "KITKAT",
+    "price": 4800000,
+    "image": "/images/chocolate/kitkat-012-1-300x300.webp"
+  },
+  {
+    "id": "hobby-002",
+    "name": "شکلات هوبی اولکر بسته 24 عددی",
+    "brand": "ÜLKER",
+    "price": 1965000,
+    "image": "/images/chocolate/hobby-002-1-300x300.webp"
+  }
 ]
-export const sets: Product[] = [
-  { id: 'shein-634', name: 'ست تاپ و شورت زنانه کیت فوتبالی شین', brand: 'SHEIN', price: 1078000, image: media('uploads/2026/10/shein-634-1-300x450.webp') },
-  { id: 'gloria-1212', name: 'ست زنانه ۲ تکه فنردار دانتل رنگی گلوریا', brand: 'GLORIA', price: 1258000, image: media('uploads/2026/09/gloria-1212-1-300x450.webp') },
-  { id: 'gloria-1232', name: 'ست زنانه فانتزی فنردار دانتل رنگی گلوریا', brand: 'GLORIA', price: 1348000, image: media('uploads/2026/09/gloria-1232-1-300x450.webp') },
-  { id: 'fitan-3356', name: 'ست زنانه ۲ تکه فانتزی جین فیتان', brand: 'FITAN', price: 1680000, image: media('uploads/2026/09/fitan-3356-1-300x450.webp') },
-  { id: 'feloriya-022', name: 'ست زنانه ۴ تکه فنردار فلامنت رنگی فلوریا', brand: 'FELORIYA', price: 1258000, image: media('uploads/2026/09/feloriya-022-1-300x450.webp') },
-  { id: 'krishna-1912', name: 'ست زنانه ۴ تکه فانتزی رنگی با دانتل سفید کریشنا', brand: 'KRISHNA', price: 1358000, image: media('uploads/2026/09/krishna-1912-1-300x450.webp') },
+
+export const coffees: Product[] = [
+  {
+    "id": "nestle-001",
+    "name": "کافی میت بدون کلسترول نستله 400 گرمی",
+    "brand": "NESTLÉ",
+    "price": 1310000,
+    "image": "/images/chocolate/nestle-001-1-300x300.webp"
+  },
+  {
+    "id": "lavazza-004",
+    "name": "قهوه لاواتزا کوالیتا اورو 250 گرمی",
+    "brand": "LAVAZZA",
+    "price": 2765000,
+    "image": "/images/chocolate/lavazza-004-300x300.webp"
+  },
+  {
+    "id": "lavazza-001",
+    "name": "قهوه لاواتزا اسپرسو ایتالیانو 250 گرمی",
+    "brand": "LAVAZZA",
+    "price": 2765000,
+    "image": "/images/chocolate/lavazza-001-300x300.webp"
+  },
+  {
+    "id": "mehmet-002",
+    "name": "پودر قهوه ترک مهمت افندی 250 گرمی",
+    "brand": "MEHMET EFENDİ",
+    "price": 1820000,
+    "image": "/images/chocolate/mehmet-002-300x300.webp"
+  },
+  {
+    "id": "mehmet-001",
+    "name": "پودر قهوه ترک مهمت افندی 100 گرمی",
+    "brand": "MEHMET EFENDİ",
+    "price": 800000,
+    "image": "/images/chocolate/mehmet-001-300x300.webp"
+  },
+  {
+    "id": "jacobs-008",
+    "name": "قهوه فوری جاکوبز گلد 200 گرمی",
+    "brand": "JACOBS",
+    "price": 2690000,
+    "image": "/images/chocolate/jacobs-008-300x300.webp"
+  }
 ]
+
 export const articles = [
-  { title: 'خرید قسطی، انتخابی راحت‌تر', description: 'خرید از ایندو با ترب‌پی و دیجی‌پی فعال شد.', path: '/installment-shopping-torob-pay-digipay/', tag: 'راهنمای خرید' },
-  { title: 'خیالتان از حریم خصوصی راحت', description: 'درباره بسته‌بندی ساده و ارسال محرمانه سفارش‌ها.', path: '/indo-discreet-packaging/', tag: 'همراه شما' },
-  { title: 'حال‌وهوای فوتبالی، به سبک شما', description: 'ست تاپ و شورت شین برای روزهای جام جهانی.', path: '/football-kit-top-shorts-shein/', tag: 'مجله ایندو' },
+  {
+    "title": "خرید قسطی در ایندو چاکلت فعال شد",
+    "description": "خرید اقساطی از ایندو چاکلت با ترب‌پی؛ قیمت، مراحل پرداخت و مرجوعی را بررسی کنید.",
+    "path": "/installment-shopping/",
+    "tag": "راهنمای خرید"
+  },
+  {
+    "title": "نحوه ارسال کالا در ایندو چاکلت",
+    "description": "روش‌های ارسال ایندو چاکلت در تهران و شهرستان‌ها، نحوه محاسبه هزینه و شرط ارسال رایگان بالای ۵ میلیون تومان را بشناسید.",
+    "path": "/in2chocolate-shipping/",
+    "tag": "ارسال سفارش"
+  },
+  {
+    "title": "شروع به کار فروشگاه آنلاین ایندو چاکلت",
+    "description": "ایندو چاکلت با تمرکز بر شکلات، قهوه و خوراکی‌های خارجی آغاز به کار کرد.",
+    "path": "/in2chocolate-launch/",
+    "tag": "داستان ایندو چاکلت"
+  }
 ]

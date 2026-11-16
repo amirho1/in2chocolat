@@ -12,32 +12,16 @@ const iranYekan = localFont({
 })
 
 export const metadata: Metadata = {
-  title: 'ایندو بازار | لباس زیر زنانه، لانژری و لباس خواب',
-  description: 'انتخابی برای خودِ شما. خرید لباس زیر زنانه، لباس خواب، بادی و ست زنانه در ایندو بازار، با راهنمای سایز و بسته‌بندی محرمانه.',
+  title: 'ایندو چاکلت | شکلات، قهوه و خوراکی‌های خارجی',
+  description: 'دنیایی از شکلات، قهوه، نوشیدنی و خوراکی‌های خارجی منتخب. خرید تکی، جعبه‌ای و عمده در ایندو چاکلت.',
   robots: { index: false, follow: false },
-  alternates: { canonical: 'https://in2bazar.com/' },
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
-  },
+  alternates: { canonical: 'https://in2chocolate.com/' },
+  icons: { icon: '/images/chocolate/logo-150x150.webp', apple: '/images/chocolate/logo-150x150.webp' },
 }
 
 export const viewport: Viewport = {
   colorScheme: 'light',
-  themeColor: '#b71c2c',
+  themeColor: '#00a693',
 }
 
 export default function RootLayout({
@@ -46,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="fa" dir="rtl" className={`light ${iranYekan.variable}`} data-brand="bazar">
+    <html lang="fa" dir="rtl" className={`light ${iranYekan.variable}`} data-brand="chocolate">
       <body className="antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && process.env.VERCEL === '1' && <Analytics />}

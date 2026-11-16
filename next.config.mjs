@@ -3,7 +3,7 @@ const nextConfig = {
   output: 'standalone',
   allowedDevOrigins: ['172.22.41.105'],
   images: {
-    remotePatterns: [{ protocol: 'https', hostname: 'in2bazar.com', pathname: '/wp-content/**' }],
+    remotePatterns: [{ protocol: 'https', hostname: 'in2chocolate.com', pathname: '/wp-content/**' }],
   },
   async headers() {
     return [{ source: '/:path*', headers: [

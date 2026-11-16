@@ -16,6 +16,6 @@ export function ProductSection({ title, eyebrow, products, id, href, featured = 
       </div>}
       {products.map(product => <ProductCard key={product.id} product={product} />)}
     </div> : <p role="status" className="rounded-xl border p-8 text-center text-muted-foreground">در حال حاضر محصولی در این مجموعه نمایش داده نمی‌شود. <a href={href} className="text-primary underline">مشاهده فروشگاه</a></p>}
-    <p className="mt-4 text-xs leading-6 text-muted-foreground">قیمت‌های ثبت‌شده از فروشگاه؛ موجودی، سایز و قیمت نهایی در صفحه محصول بررسی می‌شود.</p>
+    <p className="mt-4 text-xs leading-6 text-muted-foreground">قیمت‌های ثبت‌شده از فروشگاه؛ موجودی، وزن، تعداد در بسته و قیمت نهایی در صفحه محصول بررسی می‌شود.</p>
   </section>
 }
