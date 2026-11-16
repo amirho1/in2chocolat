@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'standalone',
+  allowedDevOrigins: ['172.22.41.105'],
   images: {
     remotePatterns: [{ protocol: 'https', hostname: 'in2bazar.com', pathname: '/wp-content/**' }],
   },

@@ -87,9 +87,18 @@
 
 @keyframes enter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 .hero-enter { animation: enter 500ms ease-out both; }
-.mobile-nav-item { transition: color var(--duration), transform var(--duration), background var(--duration); }
-.mobile-nav-item[aria-current='page'] .nav-icon { transform: translateY(-5px); background: var(--primary); color: var(--primary-foreground); }
-.nav-icon { transition: transform var(--duration), background var(--duration), color var(--duration); }
+.mobile-bottom-nav { --nav-duration: 650ms; border-top: 1px solid var(--border); box-shadow: 0 -4px 20px rgb(23 20 23 / 4%); }
+.mobile-nav-wave-track { position: absolute; inset-inline: 0; top: -33px; height: 34px; overflow: hidden; pointer-events: none; direction: ltr; }
+.mobile-nav-wave-position { width: 20%; height: 100%; transform: translateX(calc((4 - var(--active-index)) * 100%)); transition: transform var(--nav-duration) cubic-bezier(.22,.8,.25,1); }
+.mobile-nav-wave { position: absolute; left: 50%; bottom: -1px; width: 140px; height: 34px; overflow: visible; transform: translateX(-50%); fill: var(--background); stroke: var(--border); stroke-width: 1; }
+.mobile-nav-item { position: relative; display: flex; min-width: 0; min-height: 74px; flex-direction: column; align-items: center; justify-content: center; gap: 2px; color: var(--muted-foreground); font-size: 11px; transition: color var(--duration); }
+.mobile-nav-item .nav-icon { display: flex; width: 44px; height: 44px; align-items: center; justify-content: center; border-radius: 50%; transition: transform var(--nav-duration) cubic-bezier(.22,.8,.25,1), background-color var(--duration), color var(--duration); }
+.mobile-nav-item .nav-label { transition: transform var(--nav-duration) cubic-bezier(.22,.8,.25,1); }
+.mobile-nav-item[data-active='true'] { color: var(--primary); }
+.mobile-nav-item[data-active='true'] .nav-icon { transform: translateY(-20px); background: var(--primary); color: var(--primary-foreground); }
+.mobile-nav-item[data-active='true'] .nav-label { transform: translateY(-10px); }
+.mobile-nav-item:hover .nav-icon { background: var(--secondary); color: var(--primary); }
+.mobile-nav-item[data-active='true']:hover .nav-icon { background: var(--primary); color: var(--primary-foreground); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

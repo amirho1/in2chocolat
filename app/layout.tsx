@@ -40,7 +40,7 @@ export default function RootLayout({
     <html lang="fa" dir="rtl" className="light" data-brand="bazar">
       <body className="antialiased">
         {children}
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+        {process.env.NODE_ENV === 'production' && process.env.VERCEL === '1' && <Analytics />}
       </body>
     </html>
   )

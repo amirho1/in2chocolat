@@ -1,0 +1,12 @@
+.git
+.next
+.playwright-mcp
+node_modules
+.env*
+!.env.example
+*.log
+*.tsbuildinfo
+next-env.d.ts
+out
+build
+.DS_Store

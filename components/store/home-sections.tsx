@@ -9,15 +9,15 @@ import { cn } from '@/lib/utils'
 export function Hero() {
   return <section aria-labelledby="hero-heading" className="site-container pt-5 md:pt-7">
     <div className="hero-enter relative overflow-hidden rounded-2xl bg-secondary">
-      <div className="grid items-center md:min-h-[410px] md:grid-cols-[1.08fr_1fr]">
-        <div className="relative z-10 flex flex-col items-start gap-4 px-6 pt-7 md:gap-6 md:px-12 md:py-12 lg:px-16">
+      <div className="grid items-center gap-y-8 md:min-h-[410px] md:grid-cols-[1.08fr_1fr] md:gap-y-0">
+        <div className="relative z-10 flex flex-col items-start gap-6 px-6 pt-9 md:px-12 md:py-12 lg:px-16">
           <p className="flex items-center gap-2 text-xs font-medium text-primary md:text-sm"><span className="h-px w-7 bg-primary" />برای حس خوبِ خودت</p>
           <h1 id="hero-heading" className="text-[32px] font-extrabold leading-[1.65] tracking-tight sm:text-4xl lg:text-[46px]">زیبایی از<br /><span className="text-primary">احساس خوب</span> شروع می‌شه.</h1>
           <p className="max-w-md text-sm leading-7 text-muted-foreground md:text-base md:leading-8">دنیایی از لباس زیر، لباس خواب و پوشاک خاص؛<br className="hidden sm:block" /> انتخابی برای خودِ واقعی شما.</p>
           <a className={buttonVariants({ size: 'lg' })} href={storeLink('/shop/')}>کشف دنیای ایندو<ArrowLeft data-icon="inline-end" /></a>
           <p className="flex items-center gap-1.5 text-xs text-muted-foreground"><LockKeyhole className="size-3.5" />انتخاب با خیال راحت، ارسال با حفظ حریم شما</p>
         </div>
-        <div className="relative flex h-64 items-center justify-center md:h-[410px]">
+        <div className="relative flex h-72 items-center justify-center md:h-[410px]">
           <div className="absolute size-56 rounded-full bg-hero md:size-80" />
           <div className="absolute size-64 rounded-full border border-primary/10 md:size-[360px]" />
           <Image src="/images/main-banner-3.webp" alt="بادی زنانه دانتل زرشکی با کمربند پاپیونی، از مجموعه ایندو بازار" width={520} height={520} priority sizes="(max-width: 767px) 280px, 460px" className="relative h-64 w-72 object-contain md:h-[395px] md:w-[460px]" />
@@ -72,6 +72,6 @@ export function AboutStore() {
 export function JournalPreview() {
   return <section aria-labelledby="journal-heading" className="site-container section-space">
     <SectionHeading id="journal-heading" title="همراه شما، قبل و بعد از خرید" eyebrow="از مجله ایندو" href={storeLink('/blog/')} linkText="همه نوشته‌ها" />
-    <div className="grid gap-4 md:grid-cols-3">{articles.map((article, index) => <a href={storeLink(article.path)} key={article.path} className="group flex flex-col items-start gap-4 rounded-xl border p-6 transition-colors hover:bg-muted"><div className="flex w-full items-center justify-between"><Badge variant="secondary">{article.tag}</Badge><span className="text-sm text-muted-foreground">۰{index + 1}</span></div><h3 className="text-lg font-semibold">{article.title}</h3><p className="text-sm leading-7 text-muted-foreground">{article.description}</p><span className="mt-auto flex min-h-11 items-center gap-2 text-sm font-medium text-primary">بیشتر بخوانید<ArrowUpLeft className="size-4 transition-transform group-hover:-translate-x-1" /></span></a>)}</div>
+    <div className="grid gap-4 md:grid-cols-3">{articles.map((article, index) => <a href={storeLink(article.path)} key={article.path} className="group flex min-w-0 flex-col items-start gap-4 rounded-xl border bg-muted p-6 transition-colors hover:bg-gray-100"><div className="flex w-full items-center justify-between"><Badge variant="secondary">{article.tag}</Badge><span className="text-sm text-muted-foreground">۰{index + 1}</span></div><h3 className="line-clamp-2 text-lg font-semibold">{article.title}</h3><p className="line-clamp-3 text-sm leading-7 text-muted-foreground">{article.description}</p><span className="mt-auto flex min-h-11 items-center gap-2 text-sm font-medium text-primary">بیشتر بخوانید<ArrowUpLeft className="size-4 transition-transform group-hover:-translate-x-1" /></span></a>)}</div>
   </section>
 }
